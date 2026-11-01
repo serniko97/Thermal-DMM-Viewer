@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thermal-dmm-viewer"
+dynamic = ["version"]
+description = "Viewer for thermal images and multimeter recordings from FeelElec / ToolTop thermal multimeters"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = []   # standard library only (tkinter for the GUI)
+keywords = ["thermal-imaging", "multimeter", "infrared", "feelelec", "tooltop", "et13s"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: X11 Applications :: Tk",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+
+[project.urls]
+Homepage = "https://github.com/serniko97/thermal-dmm-viewer"
+Issues = "https://github.com/serniko97/thermal-dmm-viewer/issues"
+
+[project.scripts]
+thermal-dmm-viewer = "thermal_dmm_viewer:main"
+
+[tool.setuptools]
+py-modules = ["thermal_dmm_viewer"]
+
+[tool.setuptools.dynamic]
+version = { attr = "thermal_dmm_viewer.__version__" }
